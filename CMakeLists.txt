@@ -196,6 +196,7 @@ if(CMAKE_SYSTEM_PROCESSOR MATCHES "ppc64*")
   #if !defined(__VSX__)
   #error
   #endif
+  #include <altivec.h>
   int main() { return 0; }" SNAPPY_HAVE_VSX)
   
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mcpu=native")

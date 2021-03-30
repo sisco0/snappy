@@ -26,6 +26,16 @@
 // (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 // OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#include <algorithm>
+#include <array>
+#include <cstddef>
+#include <cstdint>
+#include <cstdio>
+#include <cstring>
+#include <string>
+#include <utility>
+#include <vector>
+
 #include "snappy-internal.h"
 #include "snappy-sinksource.h"
 #include "snappy.h"
@@ -86,20 +96,12 @@
 
 #if SNAPPY_HAVE_VSX
 #include <altivec.h>
+#undef bool
+#undef vector
 typedef uint8_t  v16u8 __attribute__((vector_size(16)));
 typedef uint32_t v8u16 __attribute__((vector_size(16)));
 typedef uint32_t v4u32 __attribute__((vector_size(16)));
 #endif
-
-#include <algorithm>
-#include <array>
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
-#include <cstring>
-#include <string>
-#include <utility>
-#include <vector>
 
 namespace snappy {
 
